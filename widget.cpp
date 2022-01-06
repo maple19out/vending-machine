@@ -72,16 +72,22 @@ void Widget::on_pbReset_clicked()
     QMessageBox msgBox;
     msgBox.setWindowTitle("Here is your change");
 
+    //Calculating the number of 500 coin
     int coin500 = money / 500;
     money = money - 500 * coin500;
+    //Calculating the number of 100 coin
     int coin100 = money / 100;
     money = money - 100 * coin100;
+    //Calculating the number of 50 coin
     int coin50 = money / 50;
     money = money - 50 * coin50;
+    //Calculating the number of 10 coin
     int coin10 = money / 10;
     money = money - 10 * coin10;
+    //money reset. (to zero)
     changeMoney(money);
 
+    //information string about number of each coins.
     char str[] = "%d 500 coin(s)\n%d 100 coin(s)\n%d 50 coin(s)\n%d 10 coin(s)\n returned.";
     sprintf(str, str, coin500, coin100, coin50, coin10);
 
